@@ -32,7 +32,7 @@ class DevTool{
     start() {
         this.optionHandler();
 
-        if (this.settings.enable) {
+        if (true || this.settings.enable) {
             this.reloadlastDir();
         }
     }
@@ -144,7 +144,8 @@ class DevTool{
 
 }
 
+window.devTool;
 
 setTimeout(function(){
-    var devTool = new DevTool();
+    window.devTool = new DevTool();
 }, window.localStorage['timeout'] || 5000);
