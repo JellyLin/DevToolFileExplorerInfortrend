@@ -100,25 +100,29 @@ class DevTool{
                 if (fm.files()[hash]["_scandir_path"] === path)
                     return hash;
             }
-            console.log("Folder not Found: " + path);
-            return "notFound";
+            return false;
         }
 
         async function open(path) {
             let stop = false,
-                hash = false;
+                hash = false,
+                retry = 0, retryMax = 10;
             do {
                 hash = findHash(path)
                 await sleep(200);
-            } while (hash===false);
-            if (hash === "notFound")
+                retry++;
+            } while (retry < retryMax && hash === false);
+            if (hash === "notFound") {
+                console.log("Folder not Found: " + path);
                 return;
+            }
             fm.exec('open', hash);
             // Opening
+            retry = 0;
             do {
                 stop = fm.cwd()["_scandir_path"] === path;
                 await sleep(200);
-            } while (stop===false);
+            } while (retry < retryMax && stop === false);
             return;
         }
     }
@@ -142,5 +146,5 @@ class DevTool{
 
 
 setTimeout(function(){
-    devTool = new DevTool();
-}, window.localStorage[timeout] || 5000);
+    var devTool = new DevTool();
+}, window.localStorage['timeout'] || 5000);
