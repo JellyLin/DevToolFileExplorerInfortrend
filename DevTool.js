@@ -140,4 +140,7 @@ class DevTool{
 
 }
 
-var devTool = new DevTool();
+
+setTimeout(function(){
+    devTool = new DevTool();
+}, window.localStorage[timeout] || 5000);
