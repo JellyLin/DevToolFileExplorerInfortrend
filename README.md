@@ -5,7 +5,7 @@
 - Include File
 
 ```
-<script src="https://raw.githubusercontent.com/JellyLin/DevToolFileExplorerInfortrend/master/DevTool.js"></script>
+<script src="https://rawgit.com/JellyLin/DevToolFileExplorerInfortrend/master/DevTool.js"></script>
 
 or
 
