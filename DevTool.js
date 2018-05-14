@@ -122,6 +122,7 @@ class DevTool{
             do {
                 stop = fm.cwd()["_scandir_path"] === path;
                 await sleep(200);
+                retry++;
             } while (retry < retryMax && stop === false);
             return;
         }
