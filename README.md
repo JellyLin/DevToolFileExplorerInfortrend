@@ -5,11 +5,11 @@
 - Include File
 
 ```
-$.getScript("https://rawgit.com/JellyLin/DevToolFileExplorerInfortrend/master/DevTool.js");
+$.getScript("https://cdn.jsdelivr.net/gh/JellyLin/DevToolFileExplorerInfortrend@master/DevTool.js");
 
 or
 
-<script src="https://rawgit.com/JellyLin/DevToolFileExplorerInfortrend/master/DevTool.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JellyLin/DevToolFileExplorerInfortrend@master/DevTool.js"></script>
 
 or
 
